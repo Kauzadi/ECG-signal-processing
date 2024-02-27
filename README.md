@@ -1,2 +1,22 @@
 # ECG-signal-processing
-The feature detection of an ECG signal can be done using this algorithm. In this algorithm, a series of operations are performed over the raw signal form to improve the signal feature and to extract the required signal feature. 
+ ecg=LowPassFilter(ecg)
+ ecg=HighPassFilter(ecg)
+ ecg=Derivative(ecg)
+ For i=1 to length(ecg)
+ {
+ ecg(i)=ecg(i)*ecg(i)
+ }
+ ecg=FiducialMark(ecg)
+ For i=1 to length(ecg)
+ {
+ If(ecg(i)>Theshold)
+ {
+ Ecg(i)=ecg(i)
+ }
+ Else
+ {
+ Ecg(i)=0
+ }
+ }
+ Return ecg
+}
